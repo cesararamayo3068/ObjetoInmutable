@@ -6,8 +6,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		LocalDate localDate = LocalDate.now();
-		Estudiante estudiante = new Estudiante("Juan", 23, localDate, 3);
+		LocalDate fechaFinalizacion = LocalDate.now();
+		Estudiante estudiante = new Estudiante("Juan", 23, fechaFinalizacion, 3);
 
 		System.out.println("Nombre :" + estudiante.getNombre());
 		System.out.println("Edad :" + estudiante.getEdad());
