@@ -9,7 +9,18 @@ import org.junit.jupiter.api.Test;
 
 class EstudianteTest {
 
-	
+	@Test
+	void testNombreEstudiante() {
+
+		LocalDate fechaFinalizacion = LocalDate.now();
+		Estudiante estudiante = new Estudiante("Juan", 23, fechaFinalizacion, 3);
+
+		String esperado = "Juan";
+		String real = estudiante.getNombre();
+		assertEquals(esperado, real);
+		assertTrue(real.equals("Juan"));
+
+	}
 	
 	@Test
 	void testReferenciaEstudiante() {
