@@ -2,6 +2,7 @@ package com.developer.springboot.apirest.entities;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.databind.ser.impl.FailingSerializer;
 
 public final class Estudiante {
 	private final String nombre;
@@ -36,6 +37,18 @@ public final class Estudiante {
 		return fechaFinalizacion.getDayOfMonth() + "/" + fechaFinalizacion.getMonth();
 	}
 
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Estudiante)) {
+			return false;
+		}
+
+		Estudiante e = (Estudiante) obj;
+		
+		if (this.nombre == null || this.edad == null || this.fechaFinalizacion == null || this.materiasCursadas == null) {
+			return false;
+		}
+		return this.nombre.equals(e.getNombre()) && this.edad.equals(e.getEdad()) && this.materiasCursadas.equals(e.getMateriasCursadas());
+	}
 
 }
