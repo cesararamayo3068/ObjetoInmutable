@@ -23,6 +23,15 @@ class EstudianteTest {
 	}
 	
 	@Test
+	void testEdadEstudiante() {
+		LocalDate fechaFinalizacion = LocalDate.now();
+		Estudiante estudiante = new Estudiante("Fernando", 18, fechaFinalizacion, 3);
+		assertEquals(18, estudiante.getEdad().intValue());
+		assertFalse(estudiante.getEdad().intValue() < 0);
+		assertTrue(estudiante.getEdad().intValue() > 0);
+	}
+	
+	@Test
 	void testReferenciaEstudiante() {
 		LocalDate fechaFinalizacion = LocalDate.of(2021, Month.APRIL, 9);
 		Estudiante estudiante = new Estudiante("Fernando", 18, fechaFinalizacion, 3);
