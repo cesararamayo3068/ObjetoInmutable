@@ -1,12 +1,13 @@
 package com.developer.springboot.apirest.entities;
 
 import java.time.LocalDate;
+import java.time.Month;
 
 public class Principal {
 
 	public static void main(String[] args) {
 
-		LocalDate fechaFinalizacion = LocalDate.now();
+		LocalDate fechaFinalizacion = LocalDate.of(2021, Month.APRIL, 9);
 		Estudiante estudiante = new Estudiante("Juan", 23, fechaFinalizacion, 3);
 
 		System.out.println("Nombre :" + estudiante.getNombre());
