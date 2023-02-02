@@ -20,6 +20,18 @@ public final class Materia {
 		this.calficacionAlumno = calficacionAlumno;
 	}
 	
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Materia)) {
+			return false;
+		}
+
+		Materia m = (Materia) obj;
+		
+		if (this.nombre == null || this.calficacionAlumno == null) {
+			return false;
+		}
+		return this.nombre.equals(m.getNombre()) && this.calficacionAlumno.equals(m.getCalficacionAlumno());
+	}
 
 }
